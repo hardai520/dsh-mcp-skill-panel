@@ -1,0 +1,10 @@
+# The dsh-mcp-skill-panel bundle layer: applied when this package is registered
+# as a profile bundle (`dsh plugin --profile web add ...`). It mounts the
+# plugin's host half as one Cordis loader row; the browser half is discovered
+# from the same row's package manifest (`dsh.client`), so no second row is
+# needed. This row is a bundle layer, so it needs `dsh web` to restart. The MCP
+# rows the panel manages live in the profile's own `cordis.patch.yml`, which the
+# harness watches (`patchReload: live`: those edits apply without a restart).
+- insert:
+    - id: mcp-skill-panel
+      name: dsh-mcp-skill-panel
